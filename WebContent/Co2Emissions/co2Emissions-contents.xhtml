@@ -1,0 +1,48 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml" 
+			xmlns:c="http://java.sun.com/jsp/jstl/core"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:p="http://java.sun.com/jsf/ui"
+			xmlns:fn="http://java.sun.com/jsf/functions"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+	<div align="center">
+		<br/>
+		<h:outputText value="Co2Data list" styleClass="contentsTitle" />   
+		<h:form>
+		<h:dataTable value="#{co2MB.listCo2Emissions}" var="co2Data" border="1">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            #{co2Data.id}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Country</f:facet>
+            #{co2Data.country}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Year</f:facet>
+            #{co2Data.year}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Co2 Emissions (KT)</f:facet>
+            #{co2Data.co2EmissionKt}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Approuved</f:facet>
+            #{co2Data.approuved ? "YES" : "NO"}
+        </h:column>
+        
+        <f:facet name="footer">
+        	<h:outputText value="Total of data : #{co2MB.totalData}" ></h:outputText>
+        </f:facet>
+    </h:dataTable>
+    <br />
+    <h:commandButton value="Add Co2 Emissions" action="add" /> 
+    </h:form>
+		
+	</div>
+</ui:composition>
