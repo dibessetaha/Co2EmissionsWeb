@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/Co2EmissionsWeb/ressources/attests/header.css" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; 
+        }
+
+        .login-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .login-form {
+            background-color: #21252A;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: auto;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .login-form button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .welcome-message {
+            text-align: center;
+            color: #21252A;
+            margin-top: 20px;
+        }
+
+        .signup-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</h:head>
+
+<h:body>
+    <div class="header">
+        <!-- Your header content here -->
+    </div>
+
+    <div class="login-container">
+        <div class="welcome-message">
+            Welcome our data scientist, Please sign in
+        </div>
+
+        <div class="login-form">
+            <!-- Your login form content here -->
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required="true"/>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required="true"/>
+
+                <button type="submit">Sign In</button>
+            </form>
+
+            <span class="signup-link">Don't have an account? <a href="#">Sign up</a></span>
+        </div>
+    </div>
+</h:body>
+</html>
