@@ -1,0 +1,76 @@
+@charset "ISO-8859-1";
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.contentsTitle {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.table-container {
+    text-align: center;
+}
+
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.dataTable th, .dataTable td {
+    border: 1px solid #21252A;
+    padding: 8px;
+}
+
+.dataTable th {
+    background-color: #21252A;
+    color: white;
+}
+
+.dataTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.dataTable tr:hover {
+    background-color: #ddd;
+}
+
+/* Add the following styles to your existing CSS */
+
+.select-form {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.select-form label {
+    margin-right: 10px;
+}
+
+.select-form select {
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.button {
+    padding: 10px;
+    background-color: lightgreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.select-form select,
+.button {
+    font-size: 14px;
+}
+
+
+
+
