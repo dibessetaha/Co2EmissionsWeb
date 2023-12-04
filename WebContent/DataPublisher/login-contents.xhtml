@@ -16,12 +16,12 @@
         <div class="login-form">
             <h:form>
                 <label for="username">Username:</label>
-                <h:inputText id="username" value="#{dataScientistMB.dataScientist.username}" required="true"/>
+                <h:inputText id="username" value="#{publisherMB.publisher.username}" required="true"/>
 
                 <label for="password">Password:</label>
-                <h:inputSecret id="password" value="#{dataScientistMB.dataScientist.password}" required="true"/>
+                <h:inputSecret id="password" value="#{publisherMB.publisher.password}" required="true"/>
 
-                <h:commandButton value="Sign In" action="#{dataScientistMB.login}" />
+                <h:commandButton value="Sign In" action="#{publisherMB.login}" />
 
                 <h:outputText value="Don't have an account?" styleClass="signup-link"/>
 				<a href="#">Sign up</a>

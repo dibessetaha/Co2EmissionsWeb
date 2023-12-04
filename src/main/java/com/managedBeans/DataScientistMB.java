@@ -2,10 +2,8 @@ package com.managedBeans;
 
 import java.io.Serializable;
 
-import com.dao.ICo2Emissions;
 import com.dao.IDataScientist;
 import com.entities.DataScientist;
-import com.oracle.wls.shaded.org.apache.xalan.xsltc.compiler.sym;
 
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
