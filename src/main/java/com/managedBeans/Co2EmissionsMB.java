@@ -1,5 +1,3 @@
-
-//My whatssap : +212681260136
 package com.managedBeans;
 
 import java.io.Serializable;
@@ -27,6 +25,7 @@ public class Co2EmissionsMB implements Serializable {
 	private Co2Emission co2Emission = new Co2Emission() ; 
 	private String country ; 
 	private List<Co2Emission> listCo2Emissions ;
+	private List<Co2Emission> listApprouvedCo2Emissions ;
 	private int totalData ; 
 	
 	
@@ -51,7 +50,6 @@ public class Co2EmissionsMB implements Serializable {
 	
 	
 	public List<Co2Emission> getListCo2Emissions() { 
-//		publishDS();
 		if(country != null) {
 			setTotalData(metier.getCo2EmissionsByCountry(country).size());
 			listCo2Emissions = filterDataByCountry();
@@ -60,8 +58,13 @@ public class Co2EmissionsMB implements Serializable {
 			setTotalData(metier.getCo2Emissions().size());
 			listCo2Emissions = metier.getCo2Emissions() ; 
 		}
-//		publishDS();
 		return listCo2Emissions;
+	}
+	
+	
+	public List<Co2Emission> getListApprouvedCo2Emissions() { 
+		listApprouvedCo2Emissions = metier.getApprouvedData() ; 
+		return listApprouvedCo2Emissions ; 
 	}
 	
 	
@@ -89,5 +92,13 @@ public class Co2EmissionsMB implements Serializable {
 	public List<Co2Emission> filterDataByCountry() {
 		return metier.getCo2EmissionsByCountry(this.country) ;  
 		
+	}
+	
+	public void approuve(Long id) {
+		metier.approuveCo2Emission(id);
+	}
+	
+	public void disApprouve(Long id) {
+		metier.disApprouveCo2Emission(id) ; 
 	}
 }

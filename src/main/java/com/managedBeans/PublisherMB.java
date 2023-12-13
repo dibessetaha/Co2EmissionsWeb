@@ -23,7 +23,7 @@ public class PublisherMB implements Serializable {
 		
 		public String login() {
 			if(metier.login(publisher.getUsername(), publisher.getPassword())) {
-				return "approve" ; 
+				return "approuv" ; 
 
 			}else {
 				return "login" ; 
