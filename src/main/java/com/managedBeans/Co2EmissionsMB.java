@@ -17,18 +17,35 @@ public class Co2EmissionsMB implements Serializable {
 	
 
 	private static final long serialVersionUID = 1L;
-	public static boolean publish = false ; 
+	private static boolean publish = false ; 
 
 	@EJB
 	private ICo2Emissions metier ; 
 	
 	private Co2Emission co2Emission = new Co2Emission() ; 
 	private String country ; 
-	private List<Co2Emission> listCo2Emissions ;
+	private List<Co2Emission> listCo2Emissions  ;
 	private List<Co2Emission> listApprouvedCo2Emissions ;
 	private int totalData ; 
 	
-	
+	public void initDb() { 
+	 if(!publish) {
+		 publish=true ; 
+		   Co2DataSet co2DataSet = new Co2DataSet();
+		    List<Co2Emission> co2Emissions = co2DataSet.getCo2DataSet();
+
+		    // Set an appropriate batch size based on your database and performance testing
+		    int batchSize = 100;
+		    for (int i = 0; i < co2Emissions.size()/2; i += batchSize) {
+		        int endIndex = Math.min(i + batchSize, co2Emissions.size());
+		        List<Co2Emission> batch = co2Emissions.subList(i, endIndex);
+		        metier.addCo2EmissonBatch(batch);
+		    }
+			
+	 }else {
+		 System.out.println("Already initialized");
+	 }
+	}
 	
 	public String saveCo2EmissionData() {
 		metier.addCo2Emisson(co2Emission);

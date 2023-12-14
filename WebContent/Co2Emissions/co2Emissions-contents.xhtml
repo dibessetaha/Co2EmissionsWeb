@@ -6,6 +6,11 @@
                 xmlns:fn="http://java.sun.com/jsf/functions"
                 xmlns:ui="http://java.sun.com/jsf/facelets">
 
+
+	 <f:metadata>
+        <f:event type="preRenderView" listener="#{co2MB.initDb}" />
+    </f:metadata>
+	
     <link rel="stylesheet" type="text/css" href="http://localhost:8080/Co2EmissionsWeb/ressources/css/co2.css" />
 
     <div class="table-container">
@@ -20,10 +25,10 @@
                 </h:selectOneMenu>
                 <h:commandButton value="Filter" styleClass="button" action="#{co2MB.filterDataByCountry}" />
             </div>
-      	<h:dataTable id="datatable" value="#{co2MB.listCo2Emissions}" var="co2Data" border="1" styleClass="dataTable">
+      	<h:dataTable id="datatable" value="#{co2MB.listCo2Emissions}" var="co2Data" border="1" styleClass="dataTable" >
         <h:column>
-            <f:facet name="header">ID</f:facet>
-            #{co2Data.id}
+            <f:facet name="header">Country Code</f:facet>
+            #{co2Data.countryCode}
         </h:column>
 
         <h:column>

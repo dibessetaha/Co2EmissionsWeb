@@ -12,6 +12,14 @@
         <br/>
         <h:outputText value="Co2 Emissions Data in all the world" styleClass="contentsTitle"/>
         <h:form>
+        <div class="select-form">
+                <h:outputLabel for="countryFilter" value="Filter by Country:"/>
+                <h:selectOneMenu id="countryFilter" value="#{co2MB.country}" >
+                    <f:selectItem itemLabel="All Countries" itemValue=""/>
+					<f:selectItems value="#{co2MB.listCountries}" />
+                </h:selectOneMenu>
+                <h:commandButton value="Filter" styleClass="button" action="#{co2MB.filterDataByCountry}" />
+        </div>
       	<h:dataTable id="datatable" value="#{co2MB.listCo2Emissions}" var="co2Data" border="1" styleClass="dataTable">
         <h:column>
             <f:facet name="header">ID</f:facet>

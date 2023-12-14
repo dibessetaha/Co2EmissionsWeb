@@ -19,6 +19,8 @@ body {
 
 .table-container {
     text-align: center;
+	overflow-x: auto; 
+    max-height: 500px; 
 }
 
 .dataTable {
